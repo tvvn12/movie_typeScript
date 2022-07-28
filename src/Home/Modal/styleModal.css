@@ -1,0 +1,11 @@
+.modalStyle .ant-modal-header {
+    /* border-radius: 20px 20px 0 0; */
+    display: flex;
+    justify-content: center;
+    background-color: red;
+   
+  }
+  .modalStyle .ant-modal-title {
+    color: white;
+    font-size: 40px;
+  }
