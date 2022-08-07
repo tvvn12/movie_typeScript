@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-
+import "react-awesome-button/dist/styles.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";

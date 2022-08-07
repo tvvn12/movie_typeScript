@@ -4,19 +4,24 @@ import { CameraOutlined, HeatMapOutlined } from "@ant-design/icons";
 import { NavLink, To } from "react-router-dom";
 import { Link, animateScroll } from "react-scroll";
 import type { MenuProps } from "antd";
-
-interface Type {
-  name: string;
-  navigate: string;
-}
-const { Header } = Layout;
-
 const HeaderComponent = () => {
-  const items: MenuProps["items"] = [
+  const { Header } = Layout;
+  interface TypeNavigate {
+    name: string;
+    navigate: string;
+  }
+  const navigate: TypeNavigate[] = [
     {
-      label: "Navigation One",
-      key: "mail",
-      icon: "",
+      name: "Phim đang chiếu",
+      navigate: "movieList",
+    },
+    {
+      name: "Lịch chiếu",
+      navigate: "movieList",
+    },
+    {
+      name: "Cụm Rạp",
+      navigate: "movieList",
     },
   ];
 
@@ -25,8 +30,13 @@ const HeaderComponent = () => {
       <div className="fixed top-0 left-0 right-0">
         <Header style={{ backgroundColor: "#fff" }}>
           <Row>
-            <Col span={6}>
-              <img width={60} src="logoM.png" className="logo" alt="" />
+            <Col className="flex justify-center" span={6}>
+              <img
+                className="cursor-pointer"
+                width={60}
+                src="logoM.png"
+                alt=""
+              />
             </Col>
             <Col span={12}>
               <Menu
@@ -34,7 +44,17 @@ const HeaderComponent = () => {
                 theme="light"
                 mode="horizontal"
                 // defaultSelectedKeys={["2"]}
-                items={items}
+                items={navigate.map((item, index) => {
+                  const key = index + 1;
+                  return {
+                    key,
+                    label: (
+                      <Link smooth={true} to={item.navigate}>
+                        {item.name}
+                      </Link>
+                    ),
+                  };
+                })}
               />
             </Col>
             <Col span={6}></Col>

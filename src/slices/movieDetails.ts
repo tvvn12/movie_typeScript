@@ -1,16 +1,16 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { MovieList } from "../interfaces/getMovieListInterFace";
+import { MovieInfo } from "../interfaces/infoMovie";
 import MovieListAPI from "../services/movieListAPI";
 
 interface MovieListType {
-    data: MovieList[];
+    data: MovieInfo ;
     isLoading: boolean;
     error?: string | null;
   }
 
   const initialState: MovieListType = {
-    data: [],
+    data: {} as MovieInfo,
     isLoading: false,
     error: "",
   };

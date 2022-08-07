@@ -14,8 +14,8 @@ const MovieList = (props: Props) => {
   const { data, isLoading, error } = useSelector(
     (state: RootState) => state.movielist
   );
-  const showMore = () => {};
-  const param = useParams()
+    console.log(visible);
+    
   const dispatch = useDispatch<AppDisPatch>();
   useEffect(() => {
     dispatch(getMovieList());
@@ -64,7 +64,7 @@ const MovieList = (props: Props) => {
         })}
       </Row>
       <div>
-        {visible <= data.length ? (
+        {visible < data.length ? (
           <Button
             type="primary"
             loading={loadings[0]}

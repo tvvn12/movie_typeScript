@@ -11,7 +11,7 @@ import ModalPOpUp from "../Modal/Modal";
 const trailers: string[] = [
   "https://www.youtube.com/embed/uoKSzOuPcfY",
   "https://www.youtube.com/embed/kBY2k3G6LsM",
-  "https://www.youtube.coem/embed/uoKSzOuPcfY",
+  "https://www.youtube.com/embed/Eu9G8nO5-Ug",
 ];
 
 const Banner = () => {
@@ -36,8 +36,7 @@ const Banner = () => {
     dispatch(getBannerList());
   }, []);
   // console.log(data);
-  const { Content } = Layout;
-  const [dotPosition, setDotPosition] = useState<DotPosition>();
+ 
 
   const [trailer, setTrailer] = useState("");
 
@@ -57,6 +56,7 @@ const Banner = () => {
   return (
     <>
       <Carousel
+      autoplay
         dotPosition="bottom"
         style={{ position: "relative", top: "60px" }}
       >
